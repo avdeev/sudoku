@@ -75,6 +75,30 @@ http://avdeev.github.io/sudoku
   };
 ```
 
+#### Exhaustive search
+
+```js
+  function solve() {
+    unknownI = 0;
+    unknownJ = 0;
+
+    getNextUnknownCell();
+    while(!isSolved() || !checkSudoku()) {
+
+      while(!checkSudoku() && solved[unknownI][unknownJ][0] < 10) {
+        incUnknownCell();
+        checked++;
+      }
+
+      if (solved[unknownI][unknownJ][0] < 10) {
+        getNextUnknownCell();
+      } else {
+        getPreviousUnknownCell();
+      }
+    }
+  };
+```
+
 ## Vendors
 
 * Bootstrap.js 2.3.1
