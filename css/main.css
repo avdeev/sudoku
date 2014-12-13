@@ -1,0 +1,36 @@
+#play-field {
+  width:465px;
+  height:465px;
+  border-left:3px gray solid;
+  border-top:3px gray solid;
+  position:relative;
+  left:50%;
+  margin-left:-232.5px;
+}
+#play-field .row { margin:0; }
+#play-field .block {
+  width:153px;
+  height:153px;
+  border-bottom:2px gray solid;
+  border-right:2px gray solid;
+  float:left;
+}
+#play-field .block .cell {
+  border-bottom:1px gray solid;
+  border-right:1px gray solid;
+  float:left;
+  margin:0;
+  padding:5px;
+  width:40px;
+  height:40px;
+}
+#play-field .block .cell input {
+  width:26px;
+  height:30px;
+  font-size:32px;
+  padding-left:10px;
+  padding-right:2px;
+}
+.controls { text-align:center; }
+.controls button { margin-bottom:10px; }
+.statistics { text-align:center; }

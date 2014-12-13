@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sudoku - Tests</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Le styles -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 60px;
+    }
+  </style>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="index.html">Sudoku</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="index.html"><a href="">Об игре</a>
+            </li>
+            <li class=""><a href="game.html">Играть</a>
+            </li>
+            <li class="active"><a href="tests.html">Тесты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" class="container-fluid">
+    <div class="row-fluid">
+      <div class="span3 well controls">
+        <h4>Управление</h4>
+        <label for="tests-sudoku-count">Количество судоку:
+          <input type="text" id="tests-sudoku-count" value="100" maxlength="10" style="width: 80px; display: inline;">
+        </label>
+        <label for="tests-sudoku-cell-full">Подсказок:
+          <input type="text" id="tests-sudoku-cell-full" value="40" maxlength="2" style="width: 20px; display: inline;">
+        </label>
+        <button id="js-tests-generate" class="btn btn-large" type="button">Генерировать судоку</button>
+        <br>
+        <p>Сгенерировано: <span id="js-tests-generate-count">0</span>
+        </p>
+        <hr>
+        <button id="js-tests-full" class="btn btn-large" type="button">Полный перебор</button>
+        <br>
+        <button id="js-tests-evristika" class="btn btn-large" type="button">Эвристика</button>
+      </div>
+      <div class="span5">
+        <div id="play-field">
+          <div class="row">
+            <div class="block block-0">
+              <div class="row">
+                <div class="cell x-0 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-1">
+              <div class="row">
+                <div class="cell x-3 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-2">
+              <div class="row">
+                <div class="cell x-6 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-0 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-1 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-2 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="block block-3">
+              <div class="row">
+                <div class="cell x-0 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-4">
+              <div class="row">
+                <div class="cell x-3 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-5">
+              <div class="row">
+                <div class="cell x-6 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-3 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-4 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-5 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="block block-6">
+              <div class="row">
+                <div class="cell x-0 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-0 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-1 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-2 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-7">
+              <div class="row">
+                <div class="cell x-3 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-3 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-4 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-5 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+            <div class="block block-8">
+              <div class="row">
+                <div class="cell x-6 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-6 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-7 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+              <div class="row">
+                <div class="cell x-6 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-7 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+                <div class="cell x-8 y-8 control-group">
+                  <input type='text' value="" maxlength='1'>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="span4 well statistics">
+        <h4>Статистика <a href="#" id="statistics-clear"><i class="icon-trash"></i></a></h4>
+        <div style="text-align:left;">
+          <div id="statistics-content"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script src="js/sudoku-tests-evristika.js"></script>
+  <script src="js/sudoku-tests-full.js"></script>
+  <script src="js/statistics.js"></script>
+  <script src="js/sudoku-generate.js"></script>
+  <script src="js/play-field.js"></script>
+  <script src="js/sudoku-tests.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

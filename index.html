@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>    <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>     <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>     <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Sudoku - About</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width">
+
+  <!-- Le styles -->
+  <link href="css/bootstrap.css" rel="stylesheet">
+  <style>
+    body {
+      padding-top: 60px;
+    }
+  </style>
+  <link href="css/bootstrap-responsive.css" rel="stylesheet">
+  <link rel="stylesheet" href="css/main.css">
+  <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+</head>
+
+<body>
+  <!--[if lt IE 7]>
+      <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+    <![endif]-->
+
+  <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+      <div class="container">
+        <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="brand" href="index.html">Sudoku</a>
+        <div class="nav-collapse collapse">
+          <ul class="nav">
+            <li class="active"><a href="index.html">Об игре</a>
+            </li>
+            <li class=""><a href="game.html">Играть</a>
+            </li>
+            <li class=""><a href="tests.html">Тесты</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="content" class="container-fluid">
+    <div class="row-fluid">
+      <div class="span12">
+        <p><b>Судоку</b> (яп. 数独 су:доку, произношение (инф.) — «одинокое число») — популярная головоломка с числами. Является одной из разновидностью кроссворда. В переводе с японского «су» — «цифра», «доку» — «стоящая отдельно». Иногда <b>судоку</b> называют «магическим квадратом», что в общем-то не верно, так как судоку является латинским квадратом 9-го порядка. Судоку активно публикуют газеты и журналы разных стран мира, сборники судоку издаются большими тиражами. Решение судоку — популярный вид досуга.</p>
+
+        <h2>Правила</h2>
+        <p>Игровое поле представляет собой квадрат размером 9×9, разделённый на меньшие квадраты со стороной в 3 клетки. Таким образом, всё игровое поле состоит из 81 клетки. В них уже в начале игры стоят некоторые числа (от 1 до 9), называемые подсказками. От игрока требуется заполнить свободные клетки цифрами от 1 до 9 так, чтобы в каждой строке, в каждом столбце и в каждом малом квадрате 3×3 каждая цифра встречалась бы только один раз.</p>
+        <p>Сложность судоку зависит не от количества изначально заполненных клеток, а от методов, которые нужно применять для её решения. Самые простые решаются дедуктивно: всегда есть хотя бы одна клетка, куда подходит только одно число. Некоторые головоломки можно решить за несколько минут, на другие можно потратить часы.</p>
+        <p>Правильно составленная головоломка имеет только одно решение. Тем не менее, на некоторых сайтах в интернете под видом усложнённых головоломок пользователю предлагаются варианты судоку с несколькими вариантами решения, а также с ветвлениями самого хода решения.</p>
+
+        <h2>Происхождение</h2>
+        <p>В XVIII веке Леонард Эйлер изобрёл игру «Carré latin» («Латинский квадрат»). На основе этой игры в 70-х годах прошлого века в Северной Америке были придуманы специальные числовые кроссворды. Так, в США судоку появилась впервые в 1979 году в журнале «Dell Puzzle Magazine». Тогда она называлась «Number Place». Настоящую популярность судоку завоевала в 1980—1990-х годах, когда японский журнал «Nikoli» начал регулярно публиковать на своих страницах эту головоломку (с 1986 года). Сегодня судоку — обязательный компонент многих газет. Среди них много изданий с многомиллионными тиражами, например, немецкая газета «Die Zeit»<a href="http://apollo.zeit.de/sudoku/">[1]</a>, австрийский «Der Standard».<a href="http://derstandard.at/sudoku">[2]</a> Также публикует судоку российская газета «Труд».</p>
+
+        <h2>Математическая основа</h2>
+        <p>Задача обобщённого судоку на поле N²×N² является NP-полной, так как к ней сводится задача о заполнении латинского квадрата.<a href="http://www-imai.is.s.u-tokyo.ac.jp/~yato/data2/SIGAL87-2.pdf">[3]</a>
+        </p>
+        <p>Долгое время оставался открытым вопрос о минимальном количестве подсказок, необходимых для однозначного решения судоку. В частности, не было известно, существует ли однозначно решаемая судоку с 16 подсказками. Проект распределённых вычислений Sudoku@vtaiwan на платформе BOINC занимался поиском такой судоку.<a href="http://sudoku.nctu.edu.tw/joomla/">[4]</a> В январе 2012 года появилось доказательство того, что однозначно решаемых судоку с 16 подсказками не существует.<a href="http://lenta.ru/news/2012/01/09/sudoku/">[5]</a>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/vendor/jquery-1.9.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/bootstrap.js"></script>
+
+  <script src="js/sudoku-tests-evristika.js"></script>
+  <script src="js/sudoku-tests-full.js"></script>
+  <script src="js/statistics.js"></script>
+  <script src="js/sudoku-generate.js"></script>
+  <script src="js/play-field.js"></script>
+  <script src="js/sudoku-tests.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/game.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>
